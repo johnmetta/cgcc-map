@@ -35,29 +35,7 @@ function addMarker() {
       animation: google.maps.Animation.DROP
   });
   markers.push(marker);
-  var content = '<div id="content">' +
-    '<div id="siteNotice">'+
-    '</div>'+
-    '<h1 id="firstHeading" class="firstHeading">' +
-    details.name +
-    '</h1>'+
-    '<h2>Building: '+
-    details.location +
-    '</h2>'+
-    '<div id="videoContent">'+
-    '<iframe width="'+
-    videoSize[0] +
-    '" height="' +
-    videoSize[1] +
-    '" src="http://www.youtube.com/embed/'+
-    details.video +
-    '" frameborder="0" allowfullscreen></iframe>' +
-    '</div>' +
-    '<div id="bodyContent">'+
-    '<p>' +
-    details.text +
-    '</p></div>' +
-    '</div>';
+  var content = "";
   google.maps.event.addListener(marker, 'click', function () {
      infowindow.content = content;
      infowindow.open(map, marker); 
