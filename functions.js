@@ -31,11 +31,49 @@ function generateContent(details) {
       '<div id="logo"><img src="images/logo.jpg"></div>' +
       '<div id="title"><h1 class="all-caps">'+ details.name + '</h1><h2>Location: ' + details.location + '</h2></div>' +
       '</div>'+ //end header
-      '<div id="videoContent"><iframe width="'+ videoSize[0] + '" height="' + videoSize[1] + '" src="http://www.youtube.com/embed/'+ details.video + '" frameborder="0" allowfullscreen></iframe></div>' +
-      '<div id="bodyContent"><p>' + details.text + '</p><h3><a href="http://www.renewableenergycareers.org">www.renewableenergycareers.org</a></h3>' +
+      '<div id="videoContent">' +
+        '<iframe width="'+ videoSize[0] + '" height="' + videoSize[1] + '" src="http://www.youtube.com/embed/'+ details.video + '" frameborder="0" allowfullscreen></iframe><br/>' +
+        flickrCode(details.flickrCode) +
+        '</div>' +
+      '<div id="bodyContent">' +
+        '<p>' + details.text + '</p>' +
+        '<div id="courses"><p><h3>Courses</h3><ul>';
+     for (i in details.courses)
+     {
+       content += '<li><b>' + details.courses[i][0] + ' '  + details.courses[i][1] + '</b>: ' + details.courses[i][2] + '</li>'
+     } 
+     content += '</ul><h3><a href="http://www.renewableenergycareers.org">www.renewableenergycareers.org</a></h3>' +
+      '</div>' + // end courses
       '</div>' + //end bodyContent
       '</div>';
     return content;
+}
+
+function flickrCode(slideShowId) {
+
+    var flickrText = '<object width="' + videoSize[0] + '" height="' + videoSize[1] + '"> ' +
+       '<param name="flashvars" value="offsite=true&lang=en-us&page_show_url=/photos/studycleanpower/sets/' + 
+       slideShowId + 
+       '/show/&page_show_back_url=/photos/studycleanpower/sets/' + 
+       slideShowId + 
+       '/&set_id=' + 
+       slideShowId + 
+       '&jump_to="></param>' +
+       '<param name="movie" value="http://www.flickr.com/apps/slideshow/show.swf?v=109615"></param> <param name="allowFullScreen" value="true"></param>' +
+       '<embed type="application/x-shockwave-flash" src="http://www.flickr.com/apps/slideshow/show.swf?v=109615" allowFullScreen="true" flashvars="offsite=true&lang=en-us&page_show_url=/photos/studycleanpower/sets/' + 
+       slideShowId + 
+       '/show/&page_show_back_url=/photos/studycleanpower/sets/' + 
+       slideShowId + 
+       '/&set_id=' + 
+       slideShowId + 
+       '&jump_to=" width="' + 
+       videoSize[0] + 
+       '" height="' + 
+       videoSize[1] + 
+       '"></embed>' +
+       '</object>';
+
+    return flickrText;
 }
 
 /**************************************************************

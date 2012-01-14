@@ -27,7 +27,7 @@ body {
     height: 75px;
 }
 
-p {
+p, #courses  {
   font-family: adelle, serif;
   color: #777; 
   background-color: #efefef;
