@@ -49,6 +49,7 @@ function generateContent(details) {
     return content;
 }
 
+// THis is basically just the flickr embed code, cut up so that all we need is the flickr slideshow ID that's in the code.
 function flickrCode(slideShowId) {
 
     var flickrText = '<object width="' + videoSize[0] + '" height="' + videoSize[1] + '"> ' +
