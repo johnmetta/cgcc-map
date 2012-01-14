@@ -4,7 +4,9 @@ body {
   background-color: #ddd;
 }
 
-#map_canvas { height: 100% }
+#map_canvas {
+    height: 100% 
+    }
 #bodyContent {}
 #videoContent { 
   float: right;
@@ -17,6 +19,13 @@ body {
 #logo {
   float: right;
 }
+#main_header {
+    background-color:#ffffff;
+    font-family: adelle, serif;
+    margin-bottom: 5px;
+    border-bottom: 7px solid #5a0e95;
+    height: 75px;
+}
 
 p {
   font-family: adelle, serif;
@@ -26,7 +35,12 @@ p {
   width: 50%;
 }
 
-
+#main_header img{
+  float:right;
+}
+#main_header h1 {
+    padding-top:20px;
+}
 
 h1 {
   font-family: adelle, serif;
