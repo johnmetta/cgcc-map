@@ -7,7 +7,11 @@ body {
 #map_canvas {
     height: 100% 
     }
-#bodyContent {}
+#bodyContent {
+  background-color: #efefef;
+  width: 50%;  
+  min-height: 370px;
+}
 #videoContent { 
   float: right;
   padding-left: 5px;
@@ -24,19 +28,19 @@ body {
     font-family: adelle, serif;
     margin-bottom: 5px;
     border-bottom: 7px solid #5a0e95;
-    height: 75px;
+    height: 80px;
 }
 
-p, #courses  {
+p {
   font-family: adelle, serif;
   color: #777; 
-  background-color: #efefef;
   padding: 5px;
-  width: 50%;
+  background-color: #efefef;
 }
 
 #main_header img{
   float:right;
+  padding-bottom: 5px;
 }
 #main_header h1 {
     padding-top:20px;
@@ -51,9 +55,30 @@ h1 {
 h2 {
   font-family: adelle, serif;
   color: #666;
-  padding-left: 20px;
+  padding-left: 10px;
+  margin-top: -15px;
+  font-size: 1.2em;
 }
-h3 a {
+
+h3 {
+  font-family: adelle, serif;
+  padding-left: 10px;
+  color: #5a0e95;
+  margin-top: -10px;
+}
+
+ul {
+  margin-top: -10px;
+}
+
+li {
+  font-family: adelle, serif;
+  color: #777; 
+  text-decoration: none;
+  margin-left: -10px;
+}                 
+
+a {
   font-family: adelle, serif;
   color: #5a0e95;
   padding-left: 10px;

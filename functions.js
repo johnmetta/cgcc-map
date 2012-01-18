@@ -3,8 +3,9 @@
  */
  
 // Initial map point that google maps shows in the center of the map
-var center = new google.maps.LatLng(45.589970, -121.188389)
+var center = new google.maps.LatLng(45.588700, -121.188389)
 
+var minHeight = 370
 // Initial Zoom Level
 var zoom = 17;
 
@@ -36,15 +37,15 @@ function generateContent(details) {
         flickrCode(details.flickrCode) +
         '</div>' +
       '<div id="bodyContent">' +
-        '<p>' + details.text + '</p>' +
-        '<div id="courses"><p><h3>Courses</h3><ul>';
+        '<p>' + details.text +
+        '<h3>Courses</h3></p><ul>';
      for (i in details.courses)
      {
        content += '<li><b>' + details.courses[i][0] + ' '  + details.courses[i][1] + '</b>: ' + details.courses[i][2] + '</li>'
      } 
-     content += '</ul><h3><a href="http://www.renewableenergycareers.org">www.renewableenergycareers.org</a></h3>' +
-      '</div>' + // end courses
-      '</div>' + //end bodyContent
+     content += '</ul>'+
+     '<p>For more information, visit <a href="http://www.renewableenergycareers.org">www.renewableenergycareers.org</a>' +
+      '</p></div>' + //end bodyContent
       '</div>';
     return content;
 }
@@ -83,7 +84,9 @@ function flickrCode(slideShowId) {
 var markers = [];
 var iterator = 0;
 var map;
-var infowindow = new google.maps.InfoWindow();
+var infowindow = new google.maps.InfoWindow({
+    minHeight: minHeight
+});
 
 /**
  * Initializes the map and listeners.
@@ -143,6 +146,7 @@ function detectBrowser() {
     mapdiv.style.height = '800px';
     videoSize[0] = '199';
     videoSize[1] = '131';
+    minHeight = '265'
   }
 }
 
