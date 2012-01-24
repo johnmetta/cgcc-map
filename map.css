@@ -44,6 +44,14 @@ p {
 }
 #main_header h1 {
     padding-top:20px;
+    font-size: 1.7em;
+}
+
+#courses {
+    font-family: adelle, serif;
+    font-size: 1.3em;
+    font-style: bold;
+    color: #5a0e95;
 }
 
 h1 {
