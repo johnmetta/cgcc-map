@@ -38,21 +38,25 @@ function generateContent(details) {
         '</div>' +
       '<div id="bodyContent">' +
         '<p>' + details.text +
-        '</p><p><span id="courses">Courses:<span>' +
-        courseList(details) +
-     '<p>For more information, visit <a href="http://www.renewableenergycareers.org">www.renewableenergycareers.org</a>' +
+        courseList(details.courses) +
+     '<p>For more information, visit <br/><a href="http://www.renewableenergycareers.org">www.renewableenergycareers.org</a>' +
       '</p></div>' + //end bodyContent
       '</div>';
     return content;
 }
 
-function courseList(details) {
-    txt = "<ul>";
-    for (i in details.courses)
-     {
-       txt += '<li><b>' + details.courses[i][0] + ' '  + details.courses[i][1] + '</b>: ' + details.courses[i][2] + '</li>'
-     }
-    txt += "</ul>";
+function courseList(courses) {
+    if (courses.length > 0)
+    {
+        txt = '</p><p><span id="courses">Courses:<span><ul>';
+        for (i in courses)
+         {
+           txt += '<li><b>' + courses[i][0] + ' '  + courses[i][1] + '</b></li>';
+         }
+        txt += "</ul>";
+    } else {
+        txt = "";
+    }
     return txt;
 }
 // THis is basically just the flickr embed code, cut up so that all we need is the flickr slideshow ID that's in the code.
